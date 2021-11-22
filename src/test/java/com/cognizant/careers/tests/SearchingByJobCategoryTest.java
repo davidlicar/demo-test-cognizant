@@ -1,5 +1,6 @@
 package com.cognizant.careers.tests;
 
+import com.cognizant.careers.base.Constants;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -10,13 +11,15 @@ import com.cognizant.careers.base.TestUtilities;
 public class SearchingByJobCategoryTest extends BaseTest {
 	
 	private TestUtilities util= new TestUtilities();
-	
+
+	private CareersAtCognizantPage searchPage;
+
 	@Parameters({"category","location","expectedMessage"})
 	@Test(priority = 1)
 	public void testSearchingByJobCategory(String category,String location, String expectedMessage) {		
-		CareersAtCognizantPage searchPage = new CareersAtCognizantPage(driver, log);		
+		searchPage = new CareersAtCognizantPage(driver, log);
 		clearCookies();
-		searchPage.openPage();		
+		searchPage.openPage(properties.getProperty(Constants.URL_CAREERS_AT_COGNIZANT));
 		log.info("testSearchingByJobAndLocationCategory: "+location+"-"+category);
 		log.info("Parameters category: "+category+ ", location: "+location+", expectedMessage: "+expectedMessage);
 		

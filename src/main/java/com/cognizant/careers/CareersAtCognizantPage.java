@@ -8,8 +8,9 @@ import com.cognizant.careers.base.TestUtilities;
 import com.cognizant.careers.pages.BasePageObject;
 
 public class CareersAtCognizantPage extends BasePageObject{
-	
-	private String pageUrl = "https://careers.cognizant.com/global/en";
+
+
+
 	private TestUtilities util= new TestUtilities();
 	
 	/*
@@ -28,13 +29,6 @@ public class CareersAtCognizantPage extends BasePageObject{
 	
 	public CareersAtCognizantPage(WebDriver driver, Logger log) {
 		super(driver, log);
-	}
-
-	/** Open WelcomePage with it's url */
-	public void openPage() {
-		log.info("Opening page: " + pageUrl);
-		openUrl(pageUrl);
-		log.info("Page opened!");
 	}
 	
 	public void searchByCategoryAndLocation(String category,String location) {

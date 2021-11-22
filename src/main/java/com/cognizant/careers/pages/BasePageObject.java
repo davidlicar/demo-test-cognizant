@@ -74,9 +74,16 @@ public class BasePageObject {
 						(timeOutInSeconds.length > 0 ? timeOutInSeconds[0] : null));
 				break;
 			} catch (StaleElementReferenceException e) {
+				log.error(e.getMessage(),e);
 			}
 			attempts++;
 		}
 	}
 
+	/** Open WelcomePage with it's url */
+	public void openPage(String url) {
+		log.info("Opening page: " + url);
+		openUrl(url);
+		log.info("Page opened!");
+	}
 }

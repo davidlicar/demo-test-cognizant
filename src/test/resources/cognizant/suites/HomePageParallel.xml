@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ParallelExecutionExample" verbose="1" parallel="tests" thread-count="4">
+
+	<test name="VerifyLogo">
+		<parameter name="browser" value="chrome"/>
+		<classes>
+			<class name="com.cognizant.careers.tests.HomePageTest">
+				<methods>
+					<include name="TC01_VerifyLogoIsDisplayed"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="VerifyContactUsContainer">
+		<parameter name="browser" value="firefox"/>
+		<classes>
+			<class name="com.cognizant.careers.tests.HomePageTest">
+				<methods>
+					<include name="TC01_VerifyContactUsContainerIsDisplayed"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="VerifyIndustryExperienceContainer">
+		<parameter name="browser" value="chrome"/>
+		<classes>
+			<class name="com.cognizant.careers.tests.HomePageTest">
+				<methods>
+					<include name="TC01_VerifyIndustryExperienceContainerDisplayed"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>
