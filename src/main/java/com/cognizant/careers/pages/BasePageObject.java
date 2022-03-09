@@ -1,12 +1,8 @@
 package com.cognizant.careers.pages;
 
 import java.util.List;
-
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -80,10 +76,18 @@ public class BasePageObject {
 		}
 	}
 
-	/** Open WelcomePage with it's url */
+	/** Open Page with it's url */
 	public void openPage(String url) {
 		log.info("Opening page: " + url);
 		openUrl(url);
 		log.info("Page opened!");
 	}
+
+	public void scrollToBottom() {
+		log.info("Scrolling to the bottom of the page");
+		JavascriptExecutor jsExecutor= (JavascriptExecutor) driver;
+		jsExecutor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	}
+
+
 }

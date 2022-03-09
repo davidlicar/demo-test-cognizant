@@ -2,6 +2,8 @@ package com.cognizant.careers.tests;
 
 import com.cognizant.careers.base.Constants;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.cognizant.careers.CareersAtCognizantPage;
@@ -24,6 +26,7 @@ public class SearchingByJobCategoryTest extends BaseTest {
 		log.info("Parameters category: "+category+ ", location: "+location+", expectedMessage: "+expectedMessage);
 		
 		String currentMessage=searchPage.getSearchedJobsMessage();
+
 		Assert.assertTrue(currentMessage.contains(expectedMessage), "Message doesn't contain expected text.");
 		
 		searchPage.searchByCategoryAndLocation(category,location);
@@ -38,8 +41,19 @@ public class SearchingByJobCategoryTest extends BaseTest {
 		Assert.assertTrue(result > 0, "Not Found any result");
 		
 		searchPage.clickOnFirstSearchedJob();
-		
-		
+
+		searchPage.scrollBottom();
+
+	}
+
+	@BeforeTest()
+	public void beforeTest() {
+		System.out.println("Before Test");
+	}
+
+	@AfterTest()
+	public void afterTest() {
+		System.out.println("After Test");
 	}
 
 }

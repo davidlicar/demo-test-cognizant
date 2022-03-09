@@ -50,4 +50,8 @@ public class CareersAtCognizantPage extends BasePageObject{
 		return find(searchedJobsMessage).getText();
 	}
 
+	public void scrollBottom(){
+		scrollToBottom();
+	}
+
 }

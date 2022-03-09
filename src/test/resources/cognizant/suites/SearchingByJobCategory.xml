@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <!-- <suite name="testingSearchJobsByCategory" verbose="1">   -->
-<suite name="testingSearchJobsByCategory" verbose="1" parallel="tests" thread-count="4">
+<suite name="testingSearchJobsByCategory" verbose="1" parallel="tests" thread-count="1">
 		
 	<test name="ByEngineeringGuadalajaraTest-Chrome">
 		<parameter name="browser" value="chrome"/>
